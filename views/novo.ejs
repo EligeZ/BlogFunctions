@@ -1,0 +1,63 @@
+<%- include("partials/header.ejs") %>
+
+    <body>
+        <div class="container">
+            <h1>
+                <%= post ? 'Editar Postagem' : 'Nova Postagem' %>
+            </h1>
+            <% if (locals.error) { %>
+                <div class="alert alert-danger">
+                    <%= error %>
+                </div>
+                <% } %>
+                    <form action="/salvar" method="POST">
+                        <% if (post) { %>
+                            <input type="hidden" name="id" value="<%= post.id %>">
+                            <% } %>
+                                <div class="mb-3">
+                                    <label for="tituloInput" class="form-label">Título da Matéria</label>
+                                    <input type="text" class="form-control" id="tituloInput" name="titulo"
+                                        placeholder="Digite o título da sua matéria"
+                                        value="<%= post ? post.titulo : '' %>">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="nomeInput" class="form-label">Nome do Autor</label>
+                                    <input type="text" class="form-control" id="nomeInput" name="nome"
+                                        placeholder="Digite seu nome aqui" value="<%= post ? post.nome : '' %>">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="textoInput" class="form-label">Texto do blog</label>
+                                    <textarea class="form-control" id="textoInput" name="texto"
+                                        rows="5"><%= post ? post.texto : '' %></textarea>
+                                </div>
+
+                                <div class="buttons-container">
+                                    <button type="submit" class="btn btn-primary btn-lg corBotao">Salvar</button>
+                                </div>
+                    </form>
+        </div>
+    </body>
+
+    <%- include("partials/footer.ejs") %>
+
+        <!-- /*
+        Comentários das adições:
+
+        - <h1>
+            <%#= post ? 'Editar Postagem' : 'Nova Postagem' %>
+        </h1>: Exibe 'Editar Postagem' se a variável 'post' existir (modo de edição), senão 'Nova Postagem'.
+        - <%# if (locals.error) { %> ... <%# } %>: Se a variável 'error' existir (passada pelo servidor em caso de
+                validação falhar), exibe uma mensagem de erro.
+                - <form action="/salvar" method="POST"> ... </form>: Formulário que envia os dados para a rota '/salvar'
+                via método POST.
+                - <%# if (post) { %> <input type="hidden" name="id" value="<%#= post.id %>">
+                    <%# } %>: Se estiver no modo de edição ('post' existe), inclui um campo oculto com o ID da postagem a
+                        ser editada.
+                        - <input type="text" ... value="<%#= post ? post.nome : '' %>">: Preenche o campo 'Nome' com o
+                        nome da postagem a ser editada, se existir.
+                        - <textarea ...><%#= post ? post.texto : '' %></textarea>: Preenche a área de texto com o texto
+                        da postagem a ser editada, se existir.
+                        - <button type="submit" class="btn btn-primary btn-lg corBotao">Salvar</button>: Botão de envio
+                        do formulário.
+                        */ -->

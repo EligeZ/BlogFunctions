@@ -1,0 +1,74 @@
+html,
+body {
+  height: 100%; /* Garante que o html e o body ocupem toda a altura da viewport */
+  margin: 0; /* Remove as margens padrão */
+  background-color: #f9f7f7;
+}
+
+body {
+  display: flex;
+  flex-direction: column; /* Organiza os filhos (header, container, footer) em coluna */
+}
+
+.container {
+  width: 33.33%;
+  box-sizing: border-box;
+  margin: 20px auto 0; /* Adiciona margem superior e centraliza horizontalmente */
+  flex-grow: 1; /* Permite que o container cresça para ocupar o espaço restante */
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  margin-top: auto; /* Empurra o footer para o final do container flexível (body) */
+}
+
+.navCor {
+  background-color: #112d4e !important;
+}
+
+.footerCor {
+  background-color: #112d4e !important;
+}
+
+.btn {
+  width: 10rem;
+  margin: 0.5rem; /* Adiciona um pouco de espaço entre os botões */
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center; /* Centraliza os botões horizontalmente */
+  gap: 1rem; /* Adiciona espaço entre os botões (opcional) */
+  margin: 20px 0; /* Adiciona margem acima e abaixo dos botões (opcional) */
+}
+
+.corBotao {
+  background-color: #112d4e !important;
+  border-color: #3f72af !important;
+}
+
+.corBotao:hover {
+  background-color: #3f72af !important;
+}
+
+.corBotao:active {
+  background-color: #dbe2ef !important;
+  color: #112d4e !important;
+}
+
+.textoDestaque {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 3rem;
+}
+
+.textoDestaque h1 {
+  margin-bottom: 10px;
+}
+
+.textoDestaque p {
+  margin-top: 10px;
+}

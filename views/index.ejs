@@ -1,0 +1,38 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="buttons-container">
+        <a class="btn btn-primary btn-lg corBotao" href="/novo" role="button">Novo</a>
+        <a class="btn btn-primary btn-lg corBotao" href="/lista" role="button">Lista</a>
+    </div>
+
+    <div class="textoDestaque">
+        <h1>Últimas Postagens:</h1>
+        <% if (posts && posts.length> 0) { %>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <% posts.forEach(post=> { %>
+                    <li><a href="/materia/<%= post.id %>">
+                            <%= post.titulo %>
+                        </a> - <%= post.date.toLocaleDateString() %>
+                    </li>
+                    <% }); %>
+            </ul>
+            <% } else { %>
+                <p>Ainda não há postagens.</p>
+                <% } %>
+    </div>
+
+    <%- include("partials/footer.ejs") %>
+
+        <!-- /*
+        Comentários das adições:
+
+        - <%# if (posts && posts.length> 0) { %> ... <%# } else { %> ... <%# } %>%>: Verifica se existem postagens para
+                    exibir.
+                    - <ul> ... </ul>: Cria uma lista não ordenada para exibir as postagens.
+                    - <%# posts.forEach(post=> { %> ... <%# }); %>: Loop que itera sobre cada postagem no array 'posts'.
+                            - <li><a href="/materia/<%#= post.id %>">
+                                    <%#= post.nome %>
+                                </a> - <%#= post.date.toLocaleDateString() %>
+                            </li>: Exibe o nome da postagem como um link para a página da matéria e a data de
+                            publicação.
+                            */ -->

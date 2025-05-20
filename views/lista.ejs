@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="container">
+        <h1>Lista de Todas as Postagens</h1>
+        <% if (posts && posts.length> 0) { %>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <% posts.forEach(post=> { %>
+                    <li><a href="/materia/<%= post.id %>">
+                            <%= post.titulo %>
+                        </a> - <%= post.date.toLocaleDateString() %>
+                    </li>
+                    <% }); %>
+            </ul>
+            <% } else { %>
+                <p>Ainda não há postagens.</p>
+                <% } %>
+                    <div class="buttons-container">
+                        <a class="btn btn-secondary" href="/" role="button">Voltar para Home</a>
+                    </div>
+    </div>
+    <%- include("partials/footer.ejs") %>
+
+        <!-- /*
+        Comentários das adições:
+
+        - Conteúdo similar ao 'index.ejs' para exibir a lista de postagens.
+        - <a class="btn btn-secondary" href="/" ...>: Botão para voltar para a página inicial.
+            */ -->

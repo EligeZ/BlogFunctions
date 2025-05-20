@@ -1,0 +1,59 @@
+.mb-3 {
+  margin-bottom: 1.5rem; /* Espaçamento entre os grupos de label e input/textarea */
+}
+
+.form-label {
+  display: block; /* Label ocupa a linha inteira */
+  margin-bottom: 0.5rem; /* Espaçamento entre a label e o input/textarea */
+  font-weight: bold; /* Deixa o texto da label em negrito */
+}
+
+.form-control {
+  width: 100%; /* Input ocupa a largura do container */
+  padding: 0.75rem; /* Espaçamento interno do input */
+  border: 1px solid #ced4da; /* Borda do input */
+  border-radius: 0.25rem; /* Bordas arredondadas do input */
+  box-sizing: border-box; /* Garante que o padding não aumente a largura */
+  font-size: 1rem; /* Tamanho da fonte do texto dentro do input */
+}
+
+textarea.form-control {
+  min-height: 350px; /* Altura mínima da textarea */
+}
+
+.navFontCor .navbar-brand {
+  color: #dbe2ef !important; /* Cor para o título da navbar */
+}
+
+.navFontCor .navbar-nav .nav-link {
+  color: #3f72af !important; /* Cor para os links de navegação */
+}
+
+/* Para o link ativo, você pode querer uma cor diferente */
+.navFontCor .navbar-nav .nav-link.active {
+  color: #604652 !important;
+}
+
+footer p {
+  color: #dbe2ef !important; /* Cor para o texto dos parágrafos */
+}
+
+footer a {
+  color: #3f72af !important; /* Cor para os links */
+}
+
+.textoDestaque h1 {
+  color: #a73737;
+}
+
+.textoDestaque p {
+  color: #3f72af;
+}
+
+.tituloLista {
+  color: #a73737;
+}
+
+.tituloNovo {
+  color: #a73737;
+}
